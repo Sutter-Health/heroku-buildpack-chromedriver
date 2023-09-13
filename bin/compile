@@ -32,7 +32,8 @@ if [ -f $ENV_DIR/CHROMEDRIVER_VERSION ]; then
 else
   topic "Looking up latest chromedriver version"
   LATEST="https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions.json"
-  VERSION=$(curl --silent --show-error --fail --retry 3 --retry-connrefused --connect-timeout 10 "${LATEST}" | jq -r '.channels.Stable.version')
+  # VERSION=$(curl --silent --show-error --fail --retry 3 --retry-connrefused --connect-timeout 10 "${LATEST}" | jq -r '.channels.Stable.version')
+  VERSION='116.0.5845.96'
 fi
 indent "Version $VERSION"
 
